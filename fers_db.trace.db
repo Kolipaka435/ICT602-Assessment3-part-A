@@ -1,0 +1,24 @@
+2025-11-12 10:40:19.412332+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "    CREATE TABLE IF NOT EXISTS users (\000a        id INT [*]IDENTITY PRIMARY KEY,\000a        username VARCHAR(50) UNIQUE NOT NULL,\000a        password VARCHAR(100) NOT NULL,\000a        role VARCHAR(20) NOT NULL CHECK (role IN ('ADMIN', 'CUSTOMER'))\000a    )\000a"; expected "ARRAY, INVISIBLE, VISIBLE, NOT NULL, DEFAULT, GENERATED, ON UPDATE, NOT NULL, DEFAULT ON NULL, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, CHECK, REFERENCES, ,, )"; SQL statement:
+    CREATE TABLE IF NOT EXISTS users (
+        id INT IDENTITY PRIMARY KEY,
+        username VARCHAR(50) UNIQUE NOT NULL,
+        password VARCHAR(100) NOT NULL,
+        role VARCHAR(20) NOT NULL CHECK (role IN ('ADMIN', 'CUSTOMER'))
+    )
+ [42001-224]
+2025-11-12 10:40:45.435433+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USERS" not found (this database is empty); SQL statement:
+SELECT COUNT(*) FROM users WHERE username = ? [42104-224]
+2025-11-12 10:40:45.558663+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USERS" not found (this database is empty); SQL statement:
+INSERT INTO users (username, password, role) VALUES (?, ?, ?) [42104-224]
+2025-11-12 10:41:06.784167+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USERS" not found (this database is empty); SQL statement:
+SELECT COUNT(*) FROM users WHERE username = ? [42104-224]
+2025-11-12 10:41:06.905544+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USERS" not found (this database is empty); SQL statement:
+INSERT INTO users (username, password, role) VALUES (?, ?, ?) [42104-224]
+2025-11-12 10:41:17.415590+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USERS" not found (this database is empty); SQL statement:
+SELECT * FROM users WHERE username = ? AND password = ? [42104-224]
